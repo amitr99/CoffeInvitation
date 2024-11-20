@@ -14,11 +14,24 @@
         <img src = "coffee-and-cookies.jpg" alt="קפה ומגולגלות" class="image">
         <button id="confirm-button">אני מגיע!</button>
         <p id="confirmation-message" style="display: none;"> שמחה לשמוע ❤️</p>
+        <button id="notComingButton" class="button">לא מגיע</button>
     </div>
 
     <script>
         document.getElementById("confirm-button").addEventListener("click", function(){
             document.getElementById("confirmation-message").style.display = "block";
+        });
+        const notComingButton = document.getElementById('notComingButton');
+        
+        notComingButton.addEventListener('mouseover', function() {
+            // Set a random position for the button to move to when the mouse hovers over it
+            const randomX = Math.floor(Math.random() * 80) + 10;  // Random position (10% - 90% from left)
+            const randomY = Math.floor(Math.random() * 50) + 10;  // Random position (10% - 50% from top)
+            
+            // Move the button to the random position
+            notComingButton.style.position = 'absolute';
+            notComingButton.style.left = `${randomX}%`;
+            notComingButton.style.top = `${randomY}%`;
         });
     </script>
 </body>
